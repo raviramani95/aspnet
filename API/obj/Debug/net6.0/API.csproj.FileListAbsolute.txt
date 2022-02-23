@@ -74,3 +74,5 @@ C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Microsoft.AspNet
 C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Data\UserSeedData.json
+C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
