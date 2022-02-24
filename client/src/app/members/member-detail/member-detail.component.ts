@@ -44,9 +44,10 @@ export class MemberDetailComponent implements OnInit {
     return imageUrls;
   }
 
+
   loadMember(){
-    this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe( member =>{
-      this.member = member; 
+    this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe(memeber => {
+      this.member = memeber;
       this.galleryImages = this.getImages();
     })
   }
