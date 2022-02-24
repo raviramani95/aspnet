@@ -76,3 +76,5 @@ C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Microsoft.Identi
 C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Data\UserSeedData.json
 C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\ravi.ramani\Desktop\net\DatingApp\API\bin\Debug\net6.0\Newtonsoft.Json.dll
