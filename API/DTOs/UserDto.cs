@@ -11,9 +11,6 @@ namespace API.DTOs
 
         public string Token { get; set; }
         public string PhotoUrl { get; set; }
-<<<<<<< HEAD
         public string KnownAs { get; set; }
-=======
->>>>>>> a269482 (11 Adding photo upload functionality)
     }
 }

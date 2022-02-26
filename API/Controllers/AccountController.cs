@@ -38,13 +38,6 @@ namespace API.Controllers
             user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password));
             user.PasswordSalt = hmac.Key;
 
-            // var user = new AppUser
-            // {
-            //     UserName = registerDto.Username.ToLower(),
-            //     PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-            //     PasswordSalt = hmac.Key
-            // };
-
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
@@ -76,12 +69,8 @@ namespace API.Controllers
             {
                 Username = user.UserName,
                 Token = _tokenService.CreateToken(user),
-<<<<<<< HEAD
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
                 KnownAs = user.KnownAs
-=======
-                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
->>>>>>> a269482 (11 Adding photo upload functionality)
             };
         }
 
@@ -89,20 +78,5 @@ namespace API.Controllers
             return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
         }
 
-        // public async Task<ActionResult<AppUser>> Register(string username, string password){
-        //     using var hmac = new HMACSHA512();
-
-        //     var user = new AppUser
-        //     {
-        //         UserName = username,
-        //         PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
-        //         PasswordSalt = hmac.Key
-        //     };
-
-        //     _context.Users.Add(user);
-        //     await _context.SaveChangesAsync();
-
-        //     return user;
-        // }
     }
 }
