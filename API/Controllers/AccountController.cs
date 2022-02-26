@@ -76,8 +76,12 @@ namespace API.Controllers
             {
                 Username = user.UserName,
                 Token = _tokenService.CreateToken(user),
+<<<<<<< HEAD
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
                 KnownAs = user.KnownAs
+=======
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
+>>>>>>> a269482 (11 Adding photo upload functionality)
             };
         }
 
