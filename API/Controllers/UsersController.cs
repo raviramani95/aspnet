@@ -13,6 +13,7 @@ using AutoMapper;
 using AutoMapper.Execution;
 using System.Security.Claims;
 using API.Extensions;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -33,25 +34,12 @@ namespace API.Controllers
         }
         
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers(){
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery]UserParams userParams){
 
-            var users = await _userRepository.GetMembersAsync();
+            var users = await _userRepository.GetMembersAsync(userParams);
+            Response.AddPaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
             return Ok(users);
-            // var users = await _userRepository.GetUsersAsync();
-
-            // var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
-            // return Ok(usersToReturn);
         }
-        // public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
-        // {
-        //     return Ok(await _userRepository.GetUsersAsync());
-        //     // return await _context.Users.ToListAsync();
-        // }
-        // public ActionResult<IEnumerable<AppUser>> GetUsers()
-        // {
-        //     var users = _context.Users.ToList();
-        //     return users;
-        // }
 
         [HttpGet("{username}",Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
