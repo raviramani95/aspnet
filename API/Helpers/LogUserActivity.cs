@@ -17,11 +17,11 @@ namespace API.Helpers
             if(!resultContex.HttpContext.User.Identity.IsAuthenticated) return;
 
             var userId = resultContex.HttpContext.User.GetUserId();
-            var repo = resultContex.HttpContext.RequestServices.GetService<IUserRepository>();
-            var user = await repo.GetUserByIdAsync(userId);
+            var uow = resultContex.HttpContext.RequestServices.GetService<IUnitOfWork>();
+            var user = await uow.UserRepository.GetUserByIdAsync(userId);
             // LastActivity == LastActive
-            user.LastActivity = DateTime.Now;
-            await repo.SaveAllAsync();
+            user.LastActivity = DateTime.UtcNow;
+            await uow.Complete();
         }
     }
 }
